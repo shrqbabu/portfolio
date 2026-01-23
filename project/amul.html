@@ -2,126 +2,206 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Project View</title>
+  <title>Project Details</title>
   <link rel="stylesheet" href="view.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style/>
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
+/* Reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-.project-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.project-header h1 {
-  margin-bottom: 10px;
-  font-size: 32px;
-}
-
-.project-header p {
-  color: #666;
-}
-
-.project-image img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 30px;
-}
-
-.project-details h2 {
-  margin-top: 25px;
-  color: #333;
-}
-
-.project-details p,
-.project-details li {
-  color: #555;
+/* Base */
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f3f5f7;
+  color: #2c2c2c;
   line-height: 1.6;
 }
 
-.project-details ul {
+/* Layout */
+.wrapper {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 40px 0;
+}
+
+.header h1 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.header p {
+  color: #6b7280;
+  margin-top: 8px;
+}
+
+/* Image */
+.image-section img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 40px 0;
+}
+
+/* Content */
+.content-section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.block {
+  margin-bottom: 32px;
+}
+
+.block h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  border-left: 4px solid #2563eb;
+  padding-left: 12px;
+}
+
+.block p {
+  color: #4b5563;
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+}
+
+.tags li {
+  background: #eef2ff;
+  color: #1e40af;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+/* List */
+.list {
   padding-left: 20px;
 }
 
-.buttons {
-  margin-top: 30px;
+.list li {
+  margin-bottom: 8px;
+  color: #4b5563;
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
 }
 
 .btn {
   text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 6px;
+  padding: 10px 22px;
+  border-radius: 8px;
   font-size: 14px;
-  margin-right: 10px;
+  font-weight: 500;
 }
 
 .btn.primary {
-  background: #3f51b5;
-  color: #fff;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.btn.primary:hover {
+  background: #1e40af;
 }
 
 .btn.secondary {
-  background: #e0e0e0;
-  color: #333;
+  background: #e5e7eb;
+  color: #1f2937;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  font-size: 13px;
+  color: #6b7280;
 }
 
 </style>
 </head>
 <body>
 
-  <div class="container">
-    
-    <!-- Project Header -->
-    <div class="project-header">
+  <!-- Header -->
+  <header class="header">
+    <div class="wrapper">
       <h1>Sales Analysis Dashboard</h1>
-      <p>Power BI dashboard analyzing sales performance and KPIs</p>
+      <p>Data-driven insights using Power BI and SQL</p>
     </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="wrapper">
 
     <!-- Project Image -->
-    <div class="project-image">
-      <img src="https://shrqbabu.github.io/portfolio/image/amul.png" alt="Project Image">
-    </div>
+    <section class="image-section">
+      <img src="https://shrqbabu.github.io/portfolio/image/amul.png" alt="Project Preview">
+    </section>
 
-    <!-- Project Details -->
-    <div class="project-details">
-      <h2>Project Overview</h2>
-      <p>
-        This project focuses on analyzing sales data to identify trends,
-        top-performing products, and regional performance using Power BI.
-      </p>
+    <!-- Project Info -->
+    <section class="content-section">
 
-      <h2>Tools & Technologies</h2>
-      <ul>
-        <li>Power BI</li>
-        <li>Excel</li>
-        <li>DAX</li>
-      </ul>
+      <div class="block">
+        <h2>Project Overview</h2>
+        <p>
+          This project analyzes sales performance across regions and products.
+          The goal was to identify trends, improve decision-making, and create
+          a visually interactive dashboard for business users.
+        </p>
+      </div>
 
-      <h2>Key Insights</h2>
-      <ul>
-        <li>Identified top 5 revenue-generating products</li>
-        <li>Improved reporting efficiency by 30%</li>
-        <li>Detected seasonal sales patterns</li>
-      </ul>
+      <div class="block">
+        <h2>Tools & Technologies</h2>
+        <ul class="tags">
+          <li>Power BI</li>
+          <li>Excel</li>
+          <li>SQL</li>
+          <li>DAX</li>
+        </ul>
+      </div>
 
-      <!-- Buttons -->
-      <div class="buttons">
-        <a href="#" class="btn primary">Live Dashboard</a>
+      <div class="block">
+        <h2>Key Insights</h2>
+        <ul class="list">
+          <li>Top 5 products contributed over 45% of total revenue</li>
+          <li>Southern region showed consistent quarterly growth</li>
+          <li>Automation reduced reporting time by 30%</li>
+        </ul>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <a href="#" class="btn primary">View Live Dashboard</a>
         <a href="index.html" class="btn secondary">Back to Projects</a>
       </div>
-    </div>
 
-  </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    © 2026 Your Name | Data Analyst Portfolio
+  </footer>
 
 </body>
 </html>
