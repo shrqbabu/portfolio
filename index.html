@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohd Shariq | Data Analyst</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .logo span {
+            color: #5c6bc0;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        nav ul li a:hover {
+            color: #9fa8da;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background-color: #e8eaf6;
+            background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            background-color: rgba(232, 234, 246, 0.9);
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #1a237e;
+        }
+        
+        .hero-text h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #3949ab;
+        }
+        
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .contact-item i {
+            margin-right: 10px;
+            color: #3949ab;
+            width: 20px;
+        }
+        
+        .hero-image {
+            flex: 0 0 300px;
+            text-align: center;
+        }
+        
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #1a237e;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background-color: #5c6bc0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-icon {
+            font-size: 2.5rem;
+            color: #3949ab;
+            margin-bottom: 20px;
+        }
+        
+        .skill-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #1a237e;
+        }
+        
+        /* Projects Section */
+        .projects-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            background-color: #e8eaf6;
+            border: none;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            color: #3949ab;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn:hover {
+            background-color: #c5cae9;
+        }
+        
+        .filter-btn.active {
+            background-color: #3949ab;
+            color: white;
+        }
+        
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .project-tag {
+            background-color: #e8eaf6;
+            color: #3949ab;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .project-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #1a237e;
+        }
+        
+        .project-content p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #3949ab;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .project-link:hover {
+            color: #1a237e;
+        }
+        
+        /* Experience Section */
+        .experience-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            border-left: 4px solid #5c6bc0;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-item h3 {
+            font-size: 1.5rem;
+            color: #1a237e;
+            margin-bottom: 5px;
+        }
+        
+        .company {
+            font-size: 1.2rem;
+            color: #3949ab;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-period {
+            display: inline-block;
+            background-color: #e8eaf6;
+            color: #3949ab;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-details {
+            margin-top: 15px;
+        }
+        
+        .timeline-details ul {
+            list-style-position: inside;
+            padding-left: 10px;
+        }
+        
+        .timeline-details li {
+            margin-bottom: 8px;
+        }
+        
+        /* Education Section */
+        .education-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        
+        .education-card h3 {
+            font-size: 1.8rem;
+            color: #1a237e;
+            margin-bottom: 10px;
+        }
+        
+        .degree {
+            font-size: 1.2rem;
+            color: #3949ab;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .education-period {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Skill Progress Bars */
+        .skill-levels {
+            max-width: 800px;
+            margin: 30px auto 0;
+        }
+        
+        .skill-item {
+            margin-bottom: 25px;
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .skill-name span {
+            font-weight: 500;
+            color: #1a237e;
+        }
+        
+        .skill-bar {
+            height: 10px;
+            background-color: #e8eaf6;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #3949ab, #5c6bc0);
+            border-radius: 5px;
+            width: 0;
+            transition: width 1.5s ease-in-out;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a237e;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #9fa8da;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #3949ab;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #5c6bc0;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #3949ab;
+            font-size: 0.9rem;
+            color: #9fa8da;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-text {
+                margin-bottom: 40px;
+            }
+            
+            .contact-info {
+                justify-content: center;
+            }
+            
+            .projects-container {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .timeline-item, .education-card, .skill-card, .project-card {
+                padding: 20px;
+            }
+            
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-text h2 {
+                font-size: 1.2rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .projects-filter {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                width: 80%;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">Portfolio</span></div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>PORTFOLIO</h1>
+                <h2>Data Analyst</h2>
+                <p>Detail-oriented Data Analyst with expertise in collecting, cleaning, and analyzing large datasets to generate actionable insights. Proficient in Python, Microsoft Excel, Power BI, and MySQL with experience in creating dashboards and reports for data-driven decision making.</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>9808335538</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>shariqbabu134@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Bareilly, Uttar Pradesh, India</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="https://shrqbabu.free.nf/shrq.png" alt="Mohd Shariq" class="profile-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technical Skills</h2>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <p>Data analysis with Pandas, NumPy, data visualization with Matplotlib & Seaborn, and automation scripting for data processing.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <h3>Microsoft Excel</h3>
+                    <p>Advanced proficiency in data analysis, pivot tables, and creating complex formulas for business intelligence.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Microsoft Power BI</h3>
+                    <p>Creating interactive dashboards and visualizations to transform data into actionable insights.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>MySQL</h3>
+                    <p>Database management, querying, and data extraction for analysis and reporting purposes.</p>
+                </div>
+            </div>
+            
+            <!-- Skill Progress Bars -->
+            <div class="skill-levels">
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Python (Pandas, NumPy, Matplotlib)</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Microsoft Excel (Advanced)</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="90"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Power BI & Data Visualization</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="80"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>MySQL & Database Management</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="75"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Projects</h2>
+            </div>
+            
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="excel">Excel</button>
+                <button class="filter-btn" data-filter="powerbi">Power BI</button>
+                <button class="filter-btn" data-filter="mysql">MySQL</button>
+                <button class="filter-btn" data-filter="dashboard">Dashboard</button>
+            </div>
+            
+            <div class="projects-container">
+                <!-- Project 1 - Python -->
+                <div class="project-card" data-category="python dashboard">
+                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Python Data Analysis" class="project-img">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Pandas</span>
+                            <span class="project-tag">Data Visualization</span>
+                        </div>
+                        <h3>Sales Data Analysis with Python</h3>
+                        <p>Comprehensive sales data analysis using Python libraries (Pandas, NumPy, Matplotlib) to identify trends, patterns, and generate actionable business insights from large datasets.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                <span>View Code</span>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Live Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 - Python Automation -->
+                <div class="project-card" data-category="python">
+                    <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1432&q=80" alt="Data Automation with Python" class="project-img">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Automation</span>
+                            <span class="project-tag">Data Processing</span>
+                        </div>
+                        <h3>Automated Data Processing Pipeline</h3>
+                        <p>Built a Python automation script to clean, transform, and merge multiple data sources, reducing manual data processing time by 80% for monthly reporting.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                <span>View Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 - Excel -->
+                <div class="project-card" data-category="excel dashboard">
+                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1469&q=80" alt="Sales Analysis Dashboard" class="project-img">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Excel</span>
+                            <span class="project-tag">Dashboard</span>
+                            <span class="project-tag">Pivot Tables</span>
+                        </div>
+                        <h3>Sales Performance Dashboard</h3>
+                        <p>Comprehensive sales analysis dashboard created in Excel with interactive pivot tables, charts, and KPI tracking for a retail company.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>View Project</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 - Power BI -->
+                <div class="project-card" data-category="powerbi dashboard">
+                    <img src="https://shrqbabu.free.nf/powerbi.png" alt="Business Intelligence Dashboard" class="project-img">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Power BI</span>
+                            <span class="project-tag">Dashboard</span>
+                            <span class="project-tag">Data Visualization</span>
+                        </div>
+                        <h3>Business Intelligence Dashboard</h3>
+                        <p>Interactive Power BI dashboard visualizing key business metrics, sales trends, and customer segmentation for strategic decision-making.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>View Project</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 - MySQL -->
+                <div class="project-card" data-category="mysql">
+                    <img src="https://images.unsplash.com/photo-1549082984-1323b94df9a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Database Management System" class="project-img">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">Database</span>
+                            <span class="project-tag">ETL</span>
+                        </div>
+                        <h3>Customer Database Management System</h3>
+                        <p>Designed and implemented a MySQL database system with optimized queries for customer data management and reporting.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>View Project</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 - Python & MySQL -->
+                <div class="project-card" data-category="python mysql">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1415&q=80" alt="Python Database Integration" class="project-img">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">API Integration</span>
+                        </div>
+                        <h3>Python-MySQL Data Integration</h3>
+                        <p>Developed a Python application to extract, transform, and load data from multiple sources into a MySQL database with automated reporting capabilities.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                <span>View Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Experience</h2>
+            </div>
+            
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <h3>Data Analyst</h3>
+                    <div class="company">Digital Mantras</div>
+                    <div class="timeline-period">October 2025 - January 2026 (4 months)</div>
+                    <div class="location">Noida, Uttar Pradesh, India</div>
+                    
+                    <div class="timeline-details">
+                        <ul>
+                            <li>Collected, cleaned, and organized large datasets using Microsoft Excel and Python</li>
+                            <li>Removed duplicates, corrected errors, and formatted raw data</li>
+                            <li>Created dashboards, pivot tables, and summary reports</li>
+                            <li>Analyzed trends and patterns to generate actionable insights</li>
+                            <li>Worked with clients/stakeholders to understand data requirements</li>
+                            <li>Improved reporting efficiency and data accuracy</li>
+                            <li>Developed Python scripts for automated data processing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education</h2>
+            </div>
+            
+            <div class="education-card">
+                <h3>Mahatma Jyotiba Phule Rohilkhand University (MJPRU), Bareilly</h3>
+                <div class="degree">Bachelor of Business Administration - BBA</div>
+                <div class="degree-detail">Business Administration and Management, General</div>
+                <div class="education-period">October 2022 - October 2025</div>
+                <p>Graduated with a focus on business analytics and data-driven decision making. Completed additional coursework in Python programming for data analysis.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Me</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>9808335538</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>shariqbabu134@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Bareilly, Uttar Pradesh, India</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect With Me</h3>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/shrqbabu" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:shariqbabu134@gmail.com" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:9808335538" title="Phone">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul style="list-style: none; color: #9fa8da;">
+                        <li><a href="#home" style="color: #9fa8da; text-decoration: none;">Home</a></li>
+                        <li><a href="#skills" style="color: #9fa8da; text-decoration: none;">Skills</a></li>
+                        <li><a href="#projects" style="color: #9fa8da; text-decoration: none;">Projects</a></li>
+                        <li><a href="#experience" style="color: #9fa8da; text-decoration: none;">Experience</a></li>
+                        <li><a href="#education" style="color: #9fa8da; text-decoration: none;">Education</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 Mohd Shariq. All rights reserved.</p>
+                <p>Designed as a portfolio website for Data Analyst role.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const nav = document.querySelector('nav ul');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if(window.innerWidth <= 768) {
+                        document.querySelector('nav ul').style.display = 'none';
+                    }
+                }
+            });
+        });
+        
+        // Adjust mobile menu display on window resize
+        window.addEventListener('resize', function() {
+            const nav = document.querySelector('nav ul');
+            if(window.innerWidth > 768) {
+                nav.style.display = 'flex';
+            } else {
+                nav.style.display = 'none';
+            }
+        });
+        
+        // Project Filtering Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            // Add click event to filter buttons
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Show/hide project cards based on filter
+                    projectCards.forEach(card => {
+                        if (filterValue === 'all') {
+                            card.style.display = 'block';
+                            // Add fade-in animation
+                            card.style.animation = 'fadeIn 0.5s ease forwards';
+                        } else {
+                            const cardCategories = card.getAttribute('data-category');
+                            if (cardCategories.includes(filterValue)) {
+                                card.style.display = 'block';
+                                card.style.animation = 'fadeIn 0.5s ease forwards';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+            
+            // Animate skill progress bars when they come into view
+            const skillProgressBars = document.querySelectorAll('.skill-progress');
+            
+            const animateSkillBars = ()
