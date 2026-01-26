@@ -579,114 +579,116 @@
                 grid-template-columns: 1fr;
             }
             .trainer-box{
-  display: flex;
-  background-color: white;
-  max-width: 700px;
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-  padding: 15px;
+  display:flex;
+  background:#fff;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  padding:20px;
+  max-width:800px;
+  margin:auto;
 }
 
 .profile-container{
-  width: 230px;
+  width:230px;
+  text-align:center;
 }
 
 .profile-container img{
-  width: 210px;
-  height: 210px;
-  border-radius: 10%;
-  object-fit: cover;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  width:200px;
+  height:200px;
+  border-radius:10%;
+  object-fit:cover;
 }
 
 .name-box{
-  display: flex;
-  margin-top: 5px;
+  display:flex;
+  justify-content:center;
+  margin-top:8px;
 }
 
 .name-h1{
-  font-size: 15px;
-  font-weight: 600;
+  font-weight:600;
 }
 
 .trainer-name{
-  margin-left: 5px;
-  font-weight: 500;
-  font-size: 15px;
-  color: green;
+  margin-left:5px;
+  color:green;
 }
 
 .about-container{
-  flex: 1;
-  margin-left: 20px;
-}
-
-.about-container h1{
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.about-container p{
-  font-size: 14px;
-  margin: 8px 0 15px;
+  flex:1;
+  margin-left:20px;
 }
 
 .all-tool-image{
-  display: flex;
+  display:flex;
+  margin-top:10px;
 }
 
 .all-tool-image img{
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  margin-right: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  margin-right:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* =====================
-   MOBILE RESPONSIVE
-   ===================== */
-@media screen and (max-width: 768px){
+/* ================= FOOTER ================= */
+footer{
+  background:#1a237e;
+  color:#fff;
+  padding:40px 0;
+  margin-top:50px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+
+  nav ul{
+    display:none;
+    position:absolute;
+    right:20px;
+    top:65px;
+    background:#1a237e;
+    flex-direction:column;
+    padding:15px;
+    border-radius:10px;
+  }
+
+  nav ul li{
+    margin:10px 0;
+  }
+
+  .mobile-menu-btn{
+    display:block;
+  }
+
+  .hero-content{
+    flex-direction:column;
+    text-align:center;
+  }
 
   .trainer-box{
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction:column;
+    text-align:center;
   }
 
   .profile-container{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .profile-container img{
-    width: 170px;
-    height: 170px;
-  }
-
-  .name-box{
-    justify-content: center;
+    width:100%;
   }
 
   .about-container{
-    margin-left: 0;
-    margin-top: 15px;
-  }
-
-  .about-container h1{
-    font-size: 18px;
+    margin-left:0;
+    margin-top:15px;
   }
 
   .all-tool-image{
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content:center;
+    flex-wrap:wrap;
   }
 
   .all-tool-image img{
-    margin: 10px;
+    margin:10px;
   }
 }
     </style>
