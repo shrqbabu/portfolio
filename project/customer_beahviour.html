@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Details</title>
+  <link rel="stylesheet" href="view.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style/>
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f3f5f7;
+  color: #2c2c2c;
+  line-height: 1.6;
+}
+
+/* Layout */
+.wrapper {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 40px 0;
+}
+
+.header h1 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.header p {
+  color: #6b7280;
+  margin-top: 8px;
+}
+
+/* Image */
+.image-section img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 40px 0;
+}
+
+/* Content */
+.content-section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.block {
+  margin-bottom: 32px;
+}
+
+.block h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  border-left: 4px solid #2563eb;
+  padding-left: 12px;
+}
+
+.block p {
+  color: #4b5563;
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+}
+
+.tags li {
+  background: #eef2ff;
+  color: #1e40af;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+/* List */
+.list {
+  padding-left: 20px;
+}
+
+.list li {
+  margin-bottom: 8px;
+  color: #4b5563;
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn.primary {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.btn.primary:hover {
+  background: #1e40af;
+}
+
+.btn.secondary {
+  background: #e5e7eb;
+  color: #1f2937;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="wrapper">
+      <h1>Bookstore Data Analysis using SQL</h1>
+      <p></p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="wrapper">
+
+    <!-- Project Image -->
+    <section class="image-section">
+      <img src="https://shrqbabu.github.io/portfolio/image/bookstore.png" alt="Project Preview">
+    </section>
+
+    <!-- Project Info -->
+    <section class="content-section">
+
+      <div class="block">
+        <h2>Project Overview</h2>
+        <p>
+         This beginner-level project focuses on analyzing a bookstore database using SQL. The objective is to extract useful insights related to books, customers, sales, and inventory using structured queries.
+
+The database consists of three main tables: Books, Customers, and Orders. SQL queries are used to perform data filtering, aggregation, and analysis to simulate real-world business scenarios.
+        </p>
+      </div>
+
+      <div class="block">
+        <h2>Tools & Technologies</h2>
+        <ul class="tags">
+          <li>SQL</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h2>Key Analysis Performed</h2>
+        <ul class="list">
+          <li>Retrieved books based on genre and publication year</li>
+          <li>Identified customers from specific locations</li>
+         <li> Analyzed orders within a specific time period</li>
+         <li> Calculated total revenue and stock availability</li>
+          <li>Found most expensive and least stocked books</li>
+          <li>Identified repeat customers and high spenders</li>
+         <li> Analyzed sales distribution by genre and author</li>
+         <li> Calculated remaining inventory after fulfilling orders</li>
+        </ul>
+      </div>
+
+       <div class="block">
+        <h2>Key Analysis Performed</h2>
+         <P>The database includes:</P>
+        <ul class="list">
+           <li>Books (book_id, title, author, genre, price, stock)</li>
+           <li>Customers (customer_id, name, city, country)</li>
+           <li>Orders (order_id, customer_id, book_id, quantity, total_amount, order_date)</li>
+        </ul>
+         <P>Relationships:</P>
+          <ul class="list">
+           <li>One customer can place multiple orders</li>
+           <li>One book can be part of multiple orders</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h2>All Material Files</h2>
+        <ul class="list">
+          <li><a href="https://drive.google.com/drive/folders/1202TzFA5bkkLGjX5Xn4cv0RXp8vpBAEK?usp=sharing">GitHub All Files</a></li>
+        </ul>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <a href="https://shrqbabu.github.io/portfolio/" class="btn primary">Back To Home</a>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    © 2026 Shariq Babu | Data Analyst Portfolio
+  </footer>
+
+</body>
+</html>
