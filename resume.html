@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohd Shariq — Data Analytics</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:     #0f1923;
+    --deep:    #162032;
+    --gold:    #c9a84c;
+    --gold2:   #e8c96a;
+    --teal:    #1a7a7a;
+    --teal2:   #26b5b5;
+    --mist:    #f0f4f8;
+    --soft:    #dde6ef;
+    --mid:     #6b7f96;
+    --paper:   #fafbfc;
+  }
+
+  @page { size: A4; margin: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: white;
+    box-shadow: 0 20px 80px rgba(15,25,35,0.18), 0 2px 8px rgba(15,25,35,0.08);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ── decorative corner accent ── */
+  .page::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 180px; height: 180px;
+    background: linear-gradient(135deg, var(--gold) 0%, transparent 60%);
+    opacity: 0.12;
+    pointer-events: none;
+  }
+
+  /* ══════════════════════════════════
+     HEADER
+  ══════════════════════════════════ */
+  .header {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    background: var(--deep);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--teal2), var(--gold2));
+  }
+
+  /* diagonal slice on right */
+  .header-left {
+    padding: 36px 32px 36px 40px;
+    position: relative;
+  }
+
+  .header-left::after {
+    content: '';
+    position: absolute;
+    top: 0; right: -30px;
+    width: 60px; height: 100%;
+    background: var(--deep);
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    z-index: 1;
+  }
+
+  .monogram {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px; height: 52px;
+    background: linear-gradient(135deg, var(--gold), var(--gold2));
+    color: var(--deep);
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 22px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+  }
+
+  .name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 42px;
+    line-height: 1;
+    color: white;
+    letter-spacing: -1px;
+  }
+
+  .name span {
+    color: var(--gold2);
+  }
+
+  .title {
+    margin-top: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--teal2);
+    text-transform: uppercase;
+  }
+
+  .tagline {
+    margin-top: 18px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+    max-width: 400px;
+    font-weight: 300;
+  }
+
+  .header-right {
+    background: rgba(255,255,255,0.04);
+    padding: 36px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    border-left: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+    font-weight: 300;
+    line-height: 1.4;
+  }
+
+  .contact-item .icon {
+    width: 22px; height: 22px;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .contact-item a {
+    color: var(--gold2);
+    text-decoration: none;
+    font-size: 11px;
+  }
+
+  /* ══════════════════════════════════
+     BODY LAYOUT
+  ══════════════════════════════════ */
+  .body {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    min-height: calc(1123px - 168px);
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    background: var(--mist);
+    padding: 32px 24px;
+    border-right: 1px solid var(--soft);
+    position: relative;
+  }
+
+  .sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(26,122,122,0.05) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  /* ── MAIN ── */
+  .main {
+    padding: 32px 36px;
+  }
+
+  /* ══════════════════════════════════
+     SECTION HEADERS
+  ══════════════════════════════════ */
+  .section-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 500;
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid var(--soft);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .section-title::before {
+    content: '';
+    width: 14px; height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--teal2));
+    display: inline-block;
+    border-radius: 2px;
+  }
+
+  .section { margin-bottom: 28px; }
+
+  /* ══════════════════════════════════
+     SKILL CHIPS
+  ══════════════════════════════════ */
+  .skill-group { margin-bottom: 18px; }
+
+  .skill-group-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--mid);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .chip {
+    font-size: 10.5px;
+    padding: 3px 9px;
+    border-radius: 4px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .chip-primary {
+    background: rgba(26,122,122,0.12);
+    color: var(--teal);
+    border: 1px solid rgba(26,122,122,0.22);
+  }
+
+  .chip-gold {
+    background: rgba(201,168,76,0.12);
+    color: #8a6a1a;
+    border: 1px solid rgba(201,168,76,0.28);
+  }
+
+  .chip-dark {
+    background: rgba(15,25,35,0.07);
+    color: var(--ink);
+    border: 1px solid rgba(15,25,35,0.12);
+  }
+
+  /* ══════════════════════════════════
+     LANGUAGE BARS
+  ══════════════════════════════════ */
+  .lang-item {
+    margin-bottom: 10px;
+  }
+
+  .lang-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .lang-level { color: var(--mid); font-weight: 400; font-size: 10px; }
+
+  .lang-bar {
+    height: 3px;
+    background: var(--soft);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .lang-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--teal), var(--teal2));
+    border-radius: 2px;
+  }
+
+  /* ══════════════════════════════════
+     EDUCATION — SIDEBAR
+  ══════════════════════════════════ */
+  .edu-item {
+    margin-bottom: 16px;
+    padding-left: 12px;
+    border-left: 2px solid var(--gold);
+  }
+
+  .edu-degree {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .edu-school {
+    font-size: 10.5px;
+    color: var(--mid);
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+
+  .edu-meta {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    font-size: 9.5px;
+    padding: 1px 7px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+
+  .badge-year {
+    background: rgba(22,32,50,0.08);
+    color: var(--deep);
+  }
+
+  .badge-score {
+    background: rgba(26,122,122,0.1);
+    color: var(--teal);
+  }
+
+  /* ══════════════════════════════════
+     SUMMARY
+  ══════════════════════════════════ */
+  .summary {
+    font-size: 12.5px;
+    line-height: 1.75;
+    color: #3a4a5a;
+    font-weight: 300;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, rgba(26,122,122,0.05), rgba(201,168,76,0.05));
+    border-left: 3px solid var(--teal2);
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 4px;
+  }
+
+  .summary strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* ══════════════════════════════════
+     TRAINING CARD
+  ══════════════════════════════════ */
+  .training-card {
+    border: 1px solid var(--soft);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .training-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 16px 18px 12px;
+    background: var(--mist);
+    border-bottom: 1px solid var(--soft);
+  }
+
+  .training-org {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .training-place {
+    font-size: 11px;
+    color: var(--mid);
+    margin-top: 2px;
+  }
+
+  .training-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 3px 10px;
+    background: rgba(38,181,181,0.1);
+    color: var(--teal);
+    border: 1px solid rgba(38,181,181,0.25);
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .training-body {
+    padding: 14px 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 20px;
+  }
+
+  .training-skill {
+    font-size: 11.5px;
+    color: #3a4a5a;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    line-height: 1.4;
+  }
+
+  .training-skill::before {
+    content: '';
+    width: 5px; height: 5px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ══════════════════════════════════
+     ADDITIONAL / EXTRAS
+  ══════════════════════════════════ */
+  .extras-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .extra-card {
+    padding: 12px 14px;
+    border: 1px solid var(--soft);
+    border-radius: 6px;
+    font-size: 11.5px;
+    color: #3a4a5a;
+    line-height: 1.5;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .extra-card .dot {
+    width: 6px; height: 6px;
+    background: linear-gradient(135deg, var(--gold), var(--teal2));
+    border-radius: 50%;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  /* ══════════════════════════════════
+     DECLARATION
+  ══════════════════════════════════ */
+  .declaration {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--soft);
+    font-size: 10.5px;
+    color: var(--mid);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .decl-text { max-width: 380px; line-height: 1.6; font-style: italic; }
+
+  .decl-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 10px;
+    color: var(--mid);
+  }
+
+  .sig-line {
+    width: 110px;
+    border-bottom: 1px solid var(--mid);
+    height: 20px;
+    margin-left: auto;
+  }
+
+  /* ══════════════════════════════════
+     CERT PILL
+  ══════════════════════════════════ */
+  .cert-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: linear-gradient(90deg, rgba(201,168,76,0.08), transparent);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 8px;
+  }
+
+  .cert-name { font-size: 12px; font-weight: 600; color: var(--ink); }
+  .cert-meta { font-size: 10.5px; color: var(--mid); margin-top: 1px; }
+
+  /* ══════════════════════════════════
+     PRINT
+  ══════════════════════════════════ */
+  @media print {
+    body { padding: 0; background: white; }
+    .page { box-shadow: none; width: 100%; min-height: auto; }
+  }
+
+  /* ══════════════════════════════════
+     ANIMATIONS (screen only)
+  ══════════════════════════════════ */
+  @media screen {
+    .page { animation: rise 0.6s cubic-bezier(0.16,1,0.3,1) both; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .header-left, .header-right { animation: fadeIn 0.8s 0.1s both; }
+    .sidebar { animation: fadeIn 0.8s 0.2s both; }
+    .main    { animation: fadeIn 0.8s 0.3s both; }
+    @keyframes fadeIn {
+      from { opacity: 0; } to { opacity: 1; }
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ════ HEADER ════ -->
+  <div class="header">
+    <div class="header-left">
+      <div class="monogram">MS</div>
+      <div class="name">MOHD <span>SHARIQ</span></div>
+      <div class="title">Data Analytics Professional</div>
+      <div class="tagline">Detail-oriented fresher skilled in transforming raw data into meaningful business insights — Excel, SQL, Power BI & Python.</div>
+    </div>
+    <div class="header-right">
+      <div class="contact-item">
+        <div class="icon">📞</div>
+        <div>+91 9808335538</div>
+      </div>
+      <div class="contact-item">
+        <div class="icon">✉</div>
+        <div>shariqbabu134@gmail.com</div>
+      </div>
+      <div class="contact-item">
+        <div class="icon">🌐</div>
+        <div><a href="https://shrqbabu.github.io/portfolio/">shrqbabu.github.io/portfolio</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="icon">📍</div>
+        <div>Richha, Bareilly, Uttar Pradesh</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ BODY ════ -->
+  <div class="body">
+
+    <!-- ═══ SIDEBAR ═══ -->
+    <div class="sidebar">
+
+      <!-- SKILLS -->
+      <div class="section">
+        <div class="section-title">Technical Skills</div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Data Tools</div>
+          <div class="chips">
+            <span class="chip chip-primary">MS Excel (Adv.)</span>
+            <span class="chip chip-primary">Power BI</span>
+            <span class="chip chip-primary">SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Programming</div>
+          <div class="chips">
+            <span class="chip chip-gold">Python</span>
+            <span class="chip chip-gold">Pandas</span>
+            <span class="chip chip-gold">NumPy</span>
+            <span class="chip chip-gold">Matplotlib</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Analytics</div>
+          <div class="chips">
+            <span class="chip chip-dark">Data Cleaning</span>
+            <span class="chip chip-dark">Visualization</span>
+            <span class="chip chip-dark">Dashboards</span>
+            <span class="chip chip-dark">Statistics</span>
+            <span class="chip chip-dark">Reporting</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="section">
+        <div class="section-title">Education</div>
+
+        <div class="edu-item">
+          <div class="edu-degree">BBA — Business Administration</div>
+          <div class="edu-school">Shri Siddhi Vinayak Groups of Institute, Dohna, Bareilly</div>
+          <div class="edu-meta">
+            <span class="badge badge-year">2023–2025</span>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-degree">Senior Secondary (12th)</div>
+          <div class="edu-school">Uttar Pradesh Board</div>
+          <div class="edu-meta">
+            <span class="badge badge-score">75%</span>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-degree">Secondary (10th)</div>
+          <div class="edu-school">Uttar Pradesh Board</div>
+          <div class="edu-meta">
+            <span class="badge badge-score">59%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div class="section">
+        <div class="section-title">Languages</div>
+
+        <div class="lang-item">
+          <div class="lang-row">
+            <span>English</span>
+            <span class="lang-level">Professional</span>
+          </div>
+          <div class="lang-bar"><div class="lang-fill" style="width:78%"></div></div>
+        </div>
+
+        <div class="lang-item">
+          <div class="lang-row">
+            <span>Hindi</span>
+            <span class="lang-level">Native</span>
+          </div>
+          <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+        </div>
+
+        <div class="lang-item">
+          <div class="lang-row">
+            <span>Urdu</span>
+            <span class="lang-level">Native</span>
+          </div>
+          <div class="lang-bar"><div class="lang-fill" style="width:95%"></div></div>
+        </div>
+      </div>
+
+    </div><!-- /sidebar -->
+
+    <!-- ═══ MAIN ═══ -->
+    <div class="main">
+
+      <!-- SUMMARY -->
+      <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <div class="summary">
+          <strong>Detail-oriented Data Analytics fresher</strong> with a BBA background and hands-on professional training. Skilled in <strong>collecting, cleaning, analyzing, and visualizing data</strong> to support business decision-making. Actively seeking an entry-level <strong>Data Analyst / Business Analyst</strong> role or internship opportunity.
+        </div>
+      </div>
+
+      <!-- TRAINING -->
+      <div class="section">
+        <div class="section-title">Professional Training</div>
+        <div class="training-card">
+          <div class="training-header">
+            <div>
+              <div class="training-org">Data Analytics Training</div>
+              <div class="training-place">Dizital Mantras, Bareilly, UP</div>
+            </div>
+            <div class="training-badge">Oct 2025 – Mar 2026 · Ongoing</div>
+          </div>
+          <div class="training-body">
+            <div class="training-skill">Data Cleaning & Preparation</div>
+            <div class="training-skill">Data Analysis Techniques</div>
+            <div class="training-skill">Data Visualization & Dashboards</div>
+            <div class="training-skill">Business Insights & Reporting</div>
+            <div class="training-skill">Python — NumPy, Pandas, Matplotlib</div>
+            <div class="training-skill">Real-world Dataset Projects</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <div class="section">
+        <div class="section-title">Certifications</div>
+        <div class="cert-item">
+          <div>
+            <div class="cert-name">Data Analytics Certification</div>
+            <div class="cert-meta">Dizital Mantras, Bareilly · Oct 2025 – Mar 2026</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADDITIONAL -->
+      <div class="section">
+        <div class="section-title">Additional Highlights</div>
+        <div class="extras-grid">
+          <div class="extra-card">
+            <div class="dot"></div>
+            <div>Fresher — open to <strong>internships</strong> and entry-level roles</div>
+          </div>
+          <div class="extra-card">
+            <div class="dot"></div>
+            <div>Strong interest in <strong>data-driven</strong> business analysis</div>
+          </div>
+          <div class="extra-card">
+            <div class="dot"></div>
+            <div>Quick learner with a <strong>positive attitude</strong></div>
+          </div>
+          <div class="extra-card">
+            <div class="dot"></div>
+            <div>Portfolio at <strong>shrqbabu.github.io/portfolio</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DECLARATION -->
+      <div class="declaration">
+        <div class="decl-text">
+          I hereby declare that the above information is true and correct to the best of my knowledge.
+        </div>
+        <div class="decl-right">
+          <div>
+            <div class="sig-line"></div>
+            <div>Signature</div>
+          </div>
+          <div>Place: __________ &nbsp; Date: __________</div>
+        </div>
+      </div>
+
+    </div><!-- /main -->
+  </div><!-- /body -->
+</div><!-- /page -->
+</body>
+</html>
