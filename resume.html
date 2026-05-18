@@ -51,6 +51,7 @@
     background: linear-gradient(135deg, var(--gold) 0%, transparent 60%);
     opacity: 0.12;
     pointer-events: none;
+    z-index: 0;
   }
 
   /* ══════════════════════════════════
@@ -72,19 +73,9 @@
     background: linear-gradient(90deg, var(--gold), var(--teal2), var(--gold2));
   }
 
-  /* diagonal slice on right */
   .header-left {
     padding: 36px 32px 36px 40px;
     position: relative;
-  }
-
-  .header-left::after {
-    content: '';
-    position: absolute;
-    top: 0; right: -30px;
-    width: 60px; height: 100%;
-    background: var(--deep);
-    clip-path: polygon(0 0, 0% 100%, 100% 100%);
     z-index: 1;
   }
 
@@ -98,6 +89,8 @@
     box-shadow: 0 4px 16px rgba(0,0,0,0.4);
     margin-bottom: 14px;
     display: block;
+    position: relative;
+    z-index: 2;
   }
 
   .name {
@@ -781,7 +774,7 @@
             <div class="sig-line"></div>
             <div>Signature</div>
           </div>
-          <div>Place: __________ &nbsp; Date: __________</div>
+          <div style="white-space: nowrap;">Place: __________ &nbsp;&nbsp; Date: __________</div>
         </div>
       </div>
 
