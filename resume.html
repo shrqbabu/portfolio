@@ -517,9 +517,40 @@
   /* ══════════════════════════════════
      PRINT
   ══════════════════════════════════ */
+  /* ── DOWNLOAD BUTTON ── */
+  .download-btn {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 24px;
+    background: linear-gradient(135deg, var(--teal), var(--deep));
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 6px 24px rgba(15,25,35,0.3), 0 2px 8px rgba(26,122,122,0.4);
+    letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+  }
+  .download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 32px rgba(15,25,35,0.35), 0 4px 12px rgba(26,122,122,0.5);
+  }
+  .download-btn:active { transform: translateY(0); }
+  .download-btn svg { width: 18px; height: 18px; fill: white; flex-shrink: 0; }
+
   @media print {
     body { padding: 0; background: white; }
     .page { box-shadow: none; width: 100%; min-height: auto; }
+    .download-btn { display: none !important; }
   }
 
   /* ══════════════════════════════════
@@ -756,5 +787,30 @@
     </div><!-- /main -->
   </div><!-- /body -->
 </div><!-- /page -->
+
+<!-- DOWNLOAD BUTTON -->
+<button class="download-btn" onclick="downloadPDF()">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5v-2z"/>
+  </svg>
+  Download PDF
+</button>
+
+<script>
+function downloadPDF() {
+  const btn = document.querySelector('.download-btn');
+  btn.style.display = 'none';
+  window.print();
+  btn.style.display = 'flex';
+}
+
+// Auto-set print settings hint
+window.onbeforeprint = function() {
+  document.querySelector('.download-btn').style.display = 'none';
+};
+window.onafterprint = function() {
+  document.querySelector('.download-btn').style.display = 'flex';
+};
+</script>
 </body>
 </html>
