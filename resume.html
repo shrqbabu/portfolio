@@ -548,6 +548,7 @@
   .download-btn svg { width: 18px; height: 18px; fill: white; flex-shrink: 0; }
 
   @media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
     body { padding: 0; background: white; }
     .page { box-shadow: none; width: 100%; min-height: auto; }
     .download-btn { display: none !important; }
